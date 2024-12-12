@@ -1,12 +1,11 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import Feather from '@expo/vector-icons/Feather';
+import Colors from '@/constants/Colors';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -14,30 +13,50 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
-          },
-          default: {},
-        }),
-      }}>
+        tabBarBadgeStyle: {
+          backgroundColor: Colors.bgColor,
+          borderTopWidth: 0,
+          padding: 0,
+        },
+        tabBarActiveTintColor: Colors.rose, // Couleur de l'icône active
+        tabBarInactiveTintColor: '#999', // Couleur des icônes inactives
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: 'Acceuil',
+          tabBarIcon: ({ color }) => <Feather name="home" size={24} color={Colors.black} />,
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'explore',
+          tabBarIcon: ({ color }) => <Ionicons name="navigate-circle-outline" size={24} color={Colors.black} />,
+        }}
+      />
+
+      <Tabs.Screen
+              name="BonPlans"
+              options={{
+                title: 'Bon Plans',
+                tabBarIcon: ({ color }) => <Ionicons name="pricetag-outline" size={24} color={Colors.black} />,
+              }}
+      />
+      <Tabs.Screen
+        name="Promotions"
+        options={{
+          title: 'Promotions',
+          tabBarIcon: ({ color }) => <Ionicons name="gift-outline" size={24} color={Colors.black} />,
+        }}
+      />
+
+<Tabs.Screen
+        name="Plus"
+        options={{
+          title: 'Plus',
+          tabBarIcon: ({ color }) => <Feather name="settings" size={24} color={Colors.black} />,
         }}
       />
     </Tabs>
