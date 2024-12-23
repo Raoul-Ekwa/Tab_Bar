@@ -1,4 +1,4 @@
-export default {
+ export const Colors = {
     headerBackgroundColor: '#fff2f2',
     bgColor: '#FAF2F9',
     black: '#27283a',

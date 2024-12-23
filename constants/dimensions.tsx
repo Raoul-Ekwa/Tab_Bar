@@ -1,0 +1,3 @@
+export const APP_DIMENSIONS = {
+    LOGO_WIDTH_HEIGHT: 200,
+}
