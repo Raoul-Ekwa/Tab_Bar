@@ -1,21 +1,20 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const createAccount = () => {
+const Login = () => {
   return (
     <View style={styles.container}>
-      <Text>createAccount</Text>
+      <Text>Login</Text>
     </View>
   )
 }
 
-export default createAccount
+export default Login
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
+  }
 })

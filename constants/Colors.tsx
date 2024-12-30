@@ -7,5 +7,6 @@
     roseDark: '#e3097e',
     bleu: '#023d7d',
     bleuDark: '#bleu dark',
-    price: '#02489B'
+    price: '#02489B',
+    
   }
